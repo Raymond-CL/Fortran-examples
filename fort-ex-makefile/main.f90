@@ -17,8 +17,8 @@ program main
   end interface
   real(sp) :: ans
 
-  rad = 1d0
-  ndim = 3; ncall = 1E5; itmax = 10; nprn = 0
+  rad = 2d0
+  ndim = 4; ncall = 1E5; itmax = 10; nprn = 0
   avgi = 0d0; sd = 0d0; chi2a = 0d0
   region(1:ndim) = -rad
   region(1+ndim:2*ndim) = +rad
