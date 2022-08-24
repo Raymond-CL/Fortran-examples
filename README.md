@@ -39,3 +39,13 @@ This is a minimum work example using the Numerical-Recipe vegas subroutine
 - the `makefile` is also minimized (but canbe modified for general use.
 
 *Mar 2022*
+
+### helper
+
+This example include the usage and design of an object oriented class structure in Fortran
+The example is a few helper classes (modules) that will assist in a future program that I'm designing
+- the `fourmom` module creates a data type that work with Lorentz 4-momentums
+- the `histogram` module allows users to work with histogram book-keeping
+The above help classes are all useful in cross-section calculations of high energy particle scatterings
+
+*Aug 2022*
