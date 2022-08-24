@@ -27,7 +27,7 @@ fdevelop = $(fdial) -Og $(fwarn) $(fnowarn) $(fchek)
 # flags use for release (full optimize for speed)
 frelease = $(fdial) -O3 $(foptm)
 # use debugging flags while code testing, use release flags to run results
-FFLAGS = $(frelease)
+FFLAGS = $(fdevelop)
 
 # shortcuts to directories and files
 nrdir = nr
