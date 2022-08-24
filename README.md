@@ -17,7 +17,7 @@ dependencies generated via `makedepf90`.
 - in the example program, I'm computing the volume of a hyper-sphere, with dimension and radius given.
 - the dependencies are generated using `makedepf90`
 
-Aug 2022
+*Aug 2022*
 
 ### nr
 
@@ -29,4 +29,13 @@ A check for the Fortran compiler flags used in the makefile.
 - some fo the NR codes are not numerical algorithms, but some system validation codes, I have excluded as well.
 - the example used is similar to the 'makefile example'.
 
-Jul 2022
+*Jul 2022*
+
+### vegas
+
+This is a minimum work example using the Numerical-Recipe vegas subroutine
+- all vegas dependent codes in NR have been included in the `vegas.f` file.
+- the multidimensional integration calculates the volume of a 3D sphere with given radius.
+- the `makefile` is also minimized (but canbe modified for general use.
+
+*Mar 2022*
