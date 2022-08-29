@@ -17,8 +17,6 @@ dependencies generated via `makedepf90`.
 - in the example program, I'm computing the volume of a hyper-sphere, with dimension and radius given.
 - the dependencies are generated using `makedepf90`
 
-*Aug 2022*
-
 ### nr
 
 This is just a test program, showing that we can include almost all Numerical-Recipe codes in the `nr/` folder (without producing
@@ -29,16 +27,13 @@ A check for the Fortran compiler flags used in the makefile.
 - some fo the NR codes are not numerical algorithms, but some system validation codes, I have excluded as well.
 - the example used is similar to the 'makefile example'.
 
-*Jul 2022*
-
 ### vegas
 
-This is a minimum work example using the Numerical-Recipe vegas subroutine
+This is a minimum working example using the Numerical-Recipe vegas subroutine
+an introductory example to show how the vegas adaptive multi-dimensional numerical integration works
 - all vegas dependent codes in NR have been included in the `vegas.f` file.
 - the multidimensional integration calculates the volume of a 3D sphere with given radius.
 - the `makefile` is also minimized (but canbe modified for general use.
-
-*Mar 2022*
 
 ### helper
 
@@ -46,6 +41,5 @@ This example include the usage and design of an object oriented class structure 
 The example is a few helper classes (modules) that will assist in a future program that I'm designing
 - the `fourmom` module creates a data type that work with Lorentz 4-momentums
 - the `histogram` module allows users to work with histogram book-keeping
-The above help classes are all useful in cross-section calculations of high energy particle scatterings
+The above help classes are useful in cross-section calculations of high energy particle scatterings
 
-*Aug 2022*
