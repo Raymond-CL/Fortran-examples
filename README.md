@@ -59,5 +59,6 @@ A simple example to the optical Glauber model
 - the example varifies two properties of the glauber module:
 
 $$
-T_A(x,y)
+\int dx dy T_A(x,y) = M\\
+\int dx dy d^b T_{AA}(x,y,b) = M^2
 $$
