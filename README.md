@@ -43,3 +43,10 @@ The example is a few helper classes (modules) that will assist in a future progr
 - the `histogram` module allows users to work with histogram book-keeping
 The above help classes are useful in cross-section calculations of high energy particle scatterings
 
+### omp-pi
+
+This is a minimum working example that uses Fortran OpenMP parallelization
+- The example uses the Gregory-Leibniz series with mid-point integration to approximate the value of PI
+- the example uses the `omp-lib` library, please make sure to have `libomp-dev` installed
+- This example can be found online by John Burkardt, Florida State Univrsity, Department of Scientific Computing
+

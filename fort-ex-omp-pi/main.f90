@@ -2,8 +2,9 @@ program main
   use omp_lib
   implicit none
   integer, parameter :: logn_max = 9
-  !call omp_set_num_threads(2)
+  write(*,*) 'running omp test program'
   write(*,*) 'Number of processors availabe: ',omp_get_num_procs()
+  !call omp_set_num_threads(8)
   write(*,*) 'Number of threads available:   ',omp_get_max_threads()
   call r8_test(logn_max)
 end program
@@ -21,6 +22,7 @@ subroutine r8_test(logn_max)
   double precision wtime
   n=1
   do logn=1, logn_max
+    write(*,*) 
 
     mode = 'seq'
     wtime = omp_get_wtime()
@@ -35,7 +37,7 @@ subroutine r8_test(logn_max)
     wtime = omp_get_wtime() - wtime
     error = abs(estimate-r8_pi)
     write(*,*) n,mode,estimate,error,wtime
- 
+
     n=n*10
   enddo
   return
