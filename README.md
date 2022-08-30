@@ -57,6 +57,7 @@ A simple example to the optical Glauber model
 - the `TA` thickness and `TAA` overlap functions are calculated by 1D integration along the z-axis, using the Gaussian-Legendre
   quadrature in the `gauss` module
 - the example varifies two properties of the glauber module:
-```math
+
+$$
 T_A(x,y)
-```
+$$
