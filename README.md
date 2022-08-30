@@ -58,5 +58,6 @@ A simple example to the optical Glauber model
   quadrature in the `gauss` module
 - the example varifies two properties of the glauber module:
 ```math
-\int~dx~dy~T_{A}(x,y)=M~~~\int~dx~dy~d^2b~T_{AA}(x,y,b)=M^2
+\int dx dy T_{A}(x,y)=M\\
+\int dx dy d^2b T_{AA}(x,y,b)=M^2
 ```
