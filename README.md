@@ -19,8 +19,7 @@ dependencies generated via `makedepf90`.
 
 ### nr
 
-This is just a test program, showing that we can include almost all Numerical-Recipe codes in the `nr/` folder (without producing
-error).
+This is just a test program, showing that we can include almost all Numerical-Recipe codes in the `nr/` folder (without producing error).
 A check for the Fortran compiler flags used in the makefile.
 - note that not all NR fortran 90 codes are included in the `nr/` folder
 - some of the NR codes have extra dependencies, I have excluded them
@@ -50,3 +49,12 @@ This is a minimum working example that uses Fortran OpenMP parallelization
 - the example uses the `omp-lib` library, please make sure to have `libomp-dev` installed
 - This example can be found online by John Burkardt, Florida State Univrsity, Department of Scientific Computing
 
+### glauber
+
+A simple example to the optical Glauber model
+- atomic infomation of commonly used elements for heavy-ion collisions, which include uranium238, lead208, gold197, copper63, and aluminium27
+- the `Density` function return the nuclear mass density by using the Wood-Saxon distribution
+- the `TA` thickness and `TAA` overlap functions are calculated by 1D integration along the z-axis, using the Gaussian-Legendre
+  quadrature in the `gauss` module
+- the example varifies two properties of the glauber module:
+$$\int~dx~dy~T_{A}(x,y)=M~~~\int~dx~dy~d^2b~T_{AA}(x,y,b)=M^2$$
