@@ -41,8 +41,14 @@ recipe = '@$$(FC) $$(FFLAGS) -I $$(moddir) $$(FOBJ) -o $$@'
 .SUFFIXES:
 .SUFFIXES: .f90 .o
 
+# create directories if needed
+$(moddir):
+	$(shell mkdir -p $(moddir))
+$(objdir):
+	$(shell mkdir -p $(objdir))
+
 # recipe for every object files
-$(objdir)/%.o:
+$(objdir)/%.o: | $(moddir) $(objdir)
 	$(FC) $(FFLAGS) -J $(moddir) -c $< -o $@
 
 # include dependency file
