@@ -59,6 +59,17 @@ A simple example to the optical Glauber model
 - the example prints the thickness and overlap profile
 - the example also varifies two properties of the glauber module:
 
-$$\int dx dy ~ T_A(x,y) = M ,~~~ \int dx dy d^2b ~ T_{AA}(x,y,b) = M^2$$
+$$
+\int dx dy ~ T_A(x,y) = M ,~~~ \int dx dy d^2b ~ T_{AA}(x,y,b) = M^2
+$$
 
-where $(x,y)$ is the transverse position, $b$ the impact parameter, and $M$ the nuclear mass.
+_where $(x,y)$ is the transverse position, $b$ the impact parameter, and $M$ the nuclear mass.
+
+### color
+
+Code examples to show how to print colored texts using Fortran
+- the example comes with a simple procedure that takes a string and an integer color code as input and outputs the string with color
+- can print about 15 different colors (don't use same color as your terminal background though)
+- can only change the color of the font, not the background
+
+
