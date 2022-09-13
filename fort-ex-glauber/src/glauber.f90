@@ -28,12 +28,17 @@ subroutine setgeo(A)
   elseif(A.eq.208) then ! Lead 208
     rad = 6.62d0
     dr = 0.546d0
-    d0 = 0.1598d0
+    d0 = 0.16039d0
     taa0 = 304.26d0
+  elseif(A.eq.207) then ! Lead 207
+    rad = 6.62d0
+    dr = 0.546d0
+    d0 = 0.15962d0
+    taa0 = 0d0
   elseif(A.eq.197) then ! Gold 197
     rad = 6.38d0
     dr = 0.535d0
-    d0 = 0.1693d0
+    d0 = 0.169346d0
     taa0 = 293.19d0
   elseif(A.eq.63) then ! Copper 63
     rad = 4.163d0

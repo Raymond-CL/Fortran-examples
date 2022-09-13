@@ -1,4 +1,4 @@
-target = execute.exe
+target = vegas.exe
 
 fc = gfortran
 flag = 	-fno-strict-overflow
