@@ -3,8 +3,8 @@ use gauss
 implicit none
 integer(1) :: i
 real(dp) :: xmin,xmax,total,xi(n),wi(n)
-xmin = 0d0
-xmax = 100d0
+xmin = 1d0
+xmax = 200d0
 
 
 
@@ -43,7 +43,6 @@ call glag(xi,wi)
 total = 0d0
 do i = 1,n
   if(xi(i).ge.xmin .and. xi(i).le.xmax) then
-    write(*,*) i,xi(i),wi(i)
     total = total + wi(i) * func(xi(i))
   endif
 enddo
@@ -52,8 +51,8 @@ write(*,*) "Gauss-Laguerre    :",total
 
 
 ! Exact result
-write(*,*) "Exact             :", bessel_j0(xmin) - bessel_j0(xmax)
-!write(*,*) "Exact             :", bessel_y0(xmin) - bessel_y0(xmax)
+!write(*,*) "Exact             :", bessel_j0(xmin) - bessel_j0(xmax)
+write(*,*) "Exact             :", bessel_y0(xmin) - bessel_y0(xmax)
 
 
 
@@ -62,8 +61,8 @@ contains
 function func(x) result(fx)
 real(dp), intent(in) :: x
 real(dp) :: fx
-fx = bessel_j1(x)
-!fx = bessel_y1(x)
+!fx = bessel_j1(x)
+fx = bessel_y1(x)
 end function func
 end program main
 
