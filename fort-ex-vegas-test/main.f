@@ -1,29 +1,35 @@
       program main
       use vint
       implicit none
-      double precision, dimension(4) :: region
+      double precision, dimension(8) :: region
       double precision :: tgral,sd,chi2a
       double precision :: func
       integer :: init,ncall,itmx,nprn
       external :: func
       real :: t1,t2
-      double precision :: xmin,xmax,ymin,ymax,ans
+      double precision :: jmin,ymin,smin,cmin
+      double precision :: jmax,ymax,smax,cmax
+      double precision, parameter :: PI = 4d0*atan(1d0)
+      double precision :: ans
 
-      xmin = 0d0
-      xmax = 50d0
-      ymin = 1d0
-      ymax = 50d0
+      jmin = 0d0    ;   jmax = 50d0
+      ymin = 1d0    ;   ymax = 50d0
+      smin = 0d0    ;   smax = PI
+      cmin = 0d0    ;   cmax = PI/2d0
 
-      ans = (bessel_j0(xmin)-bessel_j0(xmax)) *
-     &      (bessel_y0(ymin)-bessel_y0(ymax))
+      ans = (bessel_j0(jmin) - bessel_j0(jmax)) *
+     &      (bessel_y0(ymin) - bessel_y0(ymax)) *
+     &      (cos(smin) - cos(smax)) *
+     &      (sin(cmin) - sin(cmax)) * (-1)
 
       nprn = -1
-      region(1) = xmin
-      region(2) = ymin
-      region(3) = xmax
-      region(4) = ymax
+      region(1) = jmin;   region(5) = jmax
+      region(2) = ymin;   region(6) = ymax
+      region(3) = smin;   region(7) = smax
+      region(4) = cmin;   region(8) = cmax
 
       write(*,*) "VEGAS adaptive Monte-Carlo test"
+      write(*,*) "using oscillatory test functions"
       write(*,*) "ans:",ans,new_line('a')
 
       ! plain integration
@@ -64,9 +70,11 @@
       double precision, dimension(:), intent(in) :: dx
       double precision, intent(in) :: wgt
       double precision :: func
-      double precision :: x,y
-      x = dx(1)
+      double precision :: j,y,s,c
+      j = dx(1)
       y = dx(2)
-      func = bessel_j1(x)*bessel_y1(y)
+      s = dx(3)
+      c = dx(4)
+      func = bessel_j1(j) * bessel_y1(y) * sin(s) * cos(c)
       return
       end function func
