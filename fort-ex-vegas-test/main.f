@@ -30,12 +30,12 @@
 
       write(*,*) "VEGAS adaptive Monte-Carlo test"
       write(*,*) "using oscillatory test functions"
-      write(*,*) "ans:",ans,new_line('a')
+      write(*,*) "analytic result:",ans,new_line('a')
 
       ! plain integration
       write(*,*) "plain:"
       call cpu_time(t1)
-      ncall = 2e8;  itmx = 1;   init = -1
+      ncall = 2e7;  itmx = 1;   init = -1
       write(*,*) "ncall:",ncall,"it:",itmx
       call vegas(region,func,init,ncall,itmx,nprn,tgral,sd,chi2a)
       call cpu_time(t2)
@@ -44,7 +44,7 @@
       ! iterative integration
       write(*,*) "iterative:"
       call cpu_time(t1)
-      ncall = 2e7;  itmx = 10;   init = -1
+      ncall = 2e6;  itmx = 10;   init = -1
       write(*,*) "ncall:",ncall,"it:",itmx
       call vegas(region,func,init,ncall,itmx,nprn,tgral,sd,chi2a)
       call cpu_time(t2)
@@ -56,7 +56,7 @@
       ncall = 1e4;  itmx = 10;   init = -1
       write(*,*) "ncall:",ncall,"it:",itmx
       call vegas(region,func,init,ncall,itmx,nprn,tgral,sd,chi2a)
-      ncall = 2e8;  itmx = 1;   init = +1
+      ncall = 1.99e7;  itmx = 1;   init = +1
       write(*,*) "ncall:",ncall,"it:",itmx
       call vegas(region,func,init,ncall,itmx,nprn,tgral,sd,chi2a)
       call cpu_time(t2)
