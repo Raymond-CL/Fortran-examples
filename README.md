@@ -34,6 +34,17 @@ an introductory example to show how the vegas adaptive multi-dimensional numeric
 - the multidimensional integration calculates the volume of a 3D sphere with given radius.
 - the `makefile` is also minimized (but canbe modified for general use.
 
+### vegas-test
+
+This is a simple program that tries to test the effectiveness of VEGAS
+- vegas is an adaptive monte-carlo multi-dimensional integration routine
+- this example uses a 4 dimensional integration, where each dimension integrates an oscillatory function
+- the integration strategies are divided into 3 categories:
+  1 - plain: 1 iteration, 2n samples
+  2 - iterative: 10 iteration, 2n/10 samples
+  3 - adaptive: warm-up 10 iteration, n/10 samples + final 1 iteration, n samples
+- all strategies should have similar total samples (maintain similar run time)
+
 ### helper
 
 This example include the usage and design of an object oriented class structure in Fortran
